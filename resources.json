@@ -1,0 +1,103 @@
+{
+  "_notice": "PLACEHOLDER DATA — every entry below uses a fake org name, fake phone number, and approximate placeholder coordinates. Do not surface this to real users until each entry has been confirmed by phone call, given real coordinates, a last_verified date, and the org has agreed to be listed. See README.md 'Data verification' section.",
+  "resources": [
+    {
+      "id": "food-001",
+      "category": "food",
+      "org_name": "Placeholder — Riverside Community Pantry",
+      "phone": "000-000-0000",
+      "address": "Placeholder address — not real",
+      "lat": 18.5204,
+      "lng": 73.8567,
+      "eligibility": "Open to anyone, no ID or proof of address required",
+      "hours": "Placeholder: Mon/Wed/Fri 10am–2pm",
+      "languages_supported": ["en", "hi", "mr"],
+      "last_verified": null,
+      "notes": "Placeholder entry — confirm hours and walk-in policy before use"
+    },
+    {
+      "id": "food-002",
+      "category": "food",
+      "org_name": "Placeholder — Neighborhood Meal Share",
+      "phone": "000-000-0001",
+      "address": "Placeholder address — not real",
+      "lat": 18.5679,
+      "lng": 73.9143,
+      "eligibility": "Families with children under 18",
+      "hours": "Placeholder: Daily, hot meals 12pm–1pm",
+      "languages_supported": ["en", "es", "zh"],
+      "last_verified": null,
+      "notes": "Placeholder entry — confirm eligibility rules before use"
+    },
+    {
+      "id": "housing-001",
+      "category": "housing",
+      "org_name": "Placeholder — Tenant Support Line",
+      "phone": "000-000-0002",
+      "address": "Placeholder — phone-based service, no fixed site",
+      "lat": null,
+      "lng": null,
+      "eligibility": "Renters facing eviction, rent increases, or unsafe conditions",
+      "hours": "Placeholder: Mon–Fri 9am–5pm",
+      "languages_supported": ["en", "hi", "mr", "ko", "zh", "de", "es"],
+      "last_verified": null,
+      "notes": "Placeholder entry — phone-based, so distance doesn't apply; confirm whether interpretation is available live or must be scheduled"
+    },
+    {
+      "id": "housing-002",
+      "category": "housing",
+      "org_name": "Placeholder — Emergency Shelter Intake",
+      "phone": "000-000-0003",
+      "address": "Placeholder address — not real",
+      "lat": 18.4636,
+      "lng": 73.8827,
+      "eligibility": "Individuals and families with nowhere safe to stay tonight",
+      "hours": "Placeholder: 24/7 intake line",
+      "languages_supported": ["en"],
+      "last_verified": null,
+      "notes": "Placeholder entry — this is the kind of entry that most needs a human fallback if language support can't be confirmed live"
+    },
+    {
+      "id": "benefits-001",
+      "category": "benefits",
+      "org_name": "Placeholder — Public Benefits Navigation Office",
+      "phone": "000-000-0004",
+      "address": "Placeholder address — not real",
+      "lat": 18.5308,
+      "lng": 73.8475,
+      "eligibility": "Varies by program — staff can screen for eligibility, this app should not",
+      "hours": "Placeholder: Mon–Fri 9am–4pm, walk-in and phone",
+      "languages_supported": ["en", "hi", "mr", "es"],
+      "last_verified": null,
+      "notes": "Placeholder entry — confirm which specific benefit programs this office actually covers"
+    },
+    {
+      "id": "health-001",
+      "category": "health",
+      "org_name": "Placeholder — Community Health Clinic (sliding scale)",
+      "phone": "000-000-0005",
+      "address": "Placeholder address — not real",
+      "lat": 18.5089,
+      "lng": 73.8553,
+      "eligibility": "No insurance required, sliding-scale fee based on income",
+      "hours": "Placeholder: Mon–Sat 8am–6pm",
+      "languages_supported": ["en", "hi", "mr", "ko", "zh", "de", "es"],
+      "last_verified": null,
+      "notes": "Placeholder entry — confirm sliding-scale documentation requirements"
+    },
+    {
+      "id": "health-002",
+      "category": "health",
+      "org_name": "Placeholder — Mental Health Crisis Line",
+      "phone": "000-000-0006",
+      "address": "Placeholder — phone-based service, no fixed site",
+      "lat": null,
+      "lng": null,
+      "eligibility": "Anyone in crisis, no eligibility requirements",
+      "hours": "Placeholder: 24/7",
+      "languages_supported": ["en", "es"],
+      "last_verified": null,
+      "notes": "Placeholder entry — phone-based, so distance doesn't apply; this is a human fallback number candidate"
+    }
+  ]
+}

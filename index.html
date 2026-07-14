@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Find Local Help</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <span class="wordmark-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 21c-4.5-3-8-6.5-8-11a8 8 0 0 1 16 0c0 4.5-3.5 8-8 11Z"/>
+          <circle cx="12" cy="10" r="2.5"/>
+        </svg>
+      </span>
+      <span class="wordmark-text" id="app-title">Find Local Help</span>
+    </div>
+  </header>
+
+  <!-- LANGUAGE SCREEN -->
+  <section id="screen-language" class="screen screen-language" aria-labelledby="lang-heading">
+    <div class="language-card">
+      <h1 id="lang-heading">Choose your language</h1>
+      <p class="lang-subhead" id="lang-subhead-text">Select the language you'd like to talk in.</p>
+      <div class="lang-grid" id="lang-grid" role="list"></div>
+    </div>
+  </section>
+
+  <!-- CHAT SCREEN -->
+  <section id="screen-chat" class="screen screen-chat hidden" aria-labelledby="chat-heading">
+    <div class="chat-toolbar">
+      <button type="button" id="btn-change-language" class="link-button">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span id="change-lang-label">Change language</span>
+      </button>
+      <button type="button" id="btn-location" class="location-pill" data-state="unknown">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4.5-3-8-6.5-8-11a8 8 0 0 1 16 0c0 4.5-3.5 8-8 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <span id="location-label"></span>
+      </button>
+      <span class="current-lang-pill" id="current-lang-pill"></span>
+    </div>
+
+    <div class="chat-scroll" id="chat-scroll">
+      <div class="chat-intro" id="chat-intro">
+        <h1 id="chat-heading" id="intro-heading">What do you need help with?</h1>
+        <p id="intro-body">Describe it in your own words — there's no wrong way to ask. For example: "my landlord gave me a letter" or "I don't have food for this week."</p>
+        <div class="safety-note" id="safety-note">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg>
+          <span id="safety-note-text">If this is an emergency, we'll show you a phone number to call right away.</span>
+        </div>
+        <p class="location-hint" id="location-hint"></p>
+      </div>
+
+      <div class="messages" id="messages" aria-live="polite"></div>
+
+      <div class="typing-indicator hidden" id="typing-indicator">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <form class="composer" id="composer">
+      <textarea
+        id="composer-input"
+        rows="1"
+        maxlength="2000"
+        autocomplete="off"
+        aria-label="Describe what you need"
+      ></textarea>
+      <button type="submit" id="composer-send" aria-label="Send">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 3 18 9-18 9 4.5-9L3 3Z"/></svg>
+      </button>
+    </form>
+  </section>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

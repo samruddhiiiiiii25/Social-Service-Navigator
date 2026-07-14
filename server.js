@@ -120,7 +120,11 @@ Keep replies short — a few sentences plus the resource details. This is being 
 }
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 app.post('/api/chat', async (req, res) => {
   const { message, language, location } = req.body || {};

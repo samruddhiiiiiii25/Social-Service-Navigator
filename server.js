@@ -8,14 +8,13 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 if (!process.env.ANTHROPIC_API_KEY) {
-  console.warn(
-    '[warning] ANTHROPIC_API_KEY is not set. Copy .env.example to .env and add your key.'
-  );
+  throw new Error("ANTHROPIC_API_KEY is missing");
+}
 }
 
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
-const MODEL = 'claude-sonnet-5';
+const MODEL = "claude-3-5-sonnet-latest";
 
 // Human fallback number shown whenever a message sounds urgent/unsafe,
 // or whenever Claude can't confidently match a real resource.
@@ -37,7 +36,7 @@ try {
   const raw = fs.readFileSync(path.join(__dirname, 'resources.json'), 'utf8');
   resourceData = JSON.parse(raw);
 } catch (err) {
-  console.error('[error] Could not load resources.json:', err.message);
+  console.error(JSON.stringify(err, Object.getOwnPropertyNames(err), 2));
   resourceData = { resources: [] };
 }
 
@@ -144,8 +143,7 @@ app.post('/api/chat', async (req, res) => {
     });
 
     const textBlock = response.content.find((block) => block.type === 'text');
-    const reply = textBlock ? textBlock.text : '';
-
+    const reply = textBlock?.text || "Sorry, I couldn't generate a response.";
     res.json({ reply });
   } catch (err) {
     console.error('[error] Anthropic API call failed:', err.message);

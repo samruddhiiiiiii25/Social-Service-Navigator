@@ -34,10 +34,10 @@ const LANGUAGE_NAMES = {
 
 let resourceData;
 try {
-  const raw = fs.readFileSync(path.join(__dirname, 'data', 'resources.json'), 'utf8');
+  const raw = fs.readFileSync(path.join(__dirname, 'resources.json'), 'utf8');
   resourceData = JSON.parse(raw);
 } catch (err) {
-  console.error('[error] Could not load data/resources.json:', err.message);
+  console.error('[error] Could not load resources.json:', err.message);
   resourceData = { resources: [] };
 }
 

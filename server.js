@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 if (!process.env.ANTHROPIC_API_KEY) {
   throw new Error("ANTHROPIC_API_KEY is missing");
 }
-}
+
 
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
@@ -146,12 +146,20 @@ app.post('/api/chat', async (req, res) => {
     const reply = textBlock?.text || "Sorry, I couldn't generate a response.";
     res.json({ reply });
   } catch (err) {
-    console.error('[error] Anthropic API call failed:', err.message);
-    res.status(500).json({
-      error: 'Something went wrong reaching the assistant.',
-      fallback_number: HUMAN_FALLBACK_NUMBER,
-    });
-  }
+  console.error("========== ANTHROPIC ERROR ==========");
+  console.error(err);
+
+  if (err.status) console.error("Status:", err.status);
+  if (err.error) console.error("Error:", err.error);
+  if (err.response) console.error("Response:", err.response);
+
+  console.error("====================================");
+
+  res.status(500).json({
+    error: 'Something went wrong reaching the assistant.',
+    fallback_number: HUMAN_FALLBACK_NUMBER,
+  });
+}
 });
 
 app.listen(PORT, () => {
